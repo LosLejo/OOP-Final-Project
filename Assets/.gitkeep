@@ -1,0 +1,2 @@
+# This file ensures the Assets directory structure is preserved in git
+# even though asset files are excluded via .gitignore

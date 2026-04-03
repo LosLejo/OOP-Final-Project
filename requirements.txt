@@ -1,0 +1,7 @@
+# Educational Game Suite Requirements
+# Python 3.8+
+
+pygame==2.5.2
+numpy==1.26.3
+pillow==10.2.0
+PyTMX==3.32

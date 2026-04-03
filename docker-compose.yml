@@ -1,0 +1,71 @@
+version: '3.9'
+
+services:
+  educational-games:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: educational-games:latest
+    container_name: educational_games
+    
+    # Display configuration for GUI
+    environment:
+      - DISPLAY=${DISPLAY:-:0}
+      - SDL_VIDEODRIVER=x11
+      - SDL_AUDIODRIVER=pulse
+    
+    # Volume mounts for X11 and audio
+    volumes:
+      # X11 display socket (Linux/macOS)
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      # Xauthority for X11 authentication (optional)
+      - ${HOME}/.Xauthority:/home/gameuser/.Xauthority:ro
+      # PulseAudio socket for audio (optional)
+      - /run/user/1000/pulse:/run/user/1000/pulse:ro
+      # Or mount Assets locally if you want to provide them at runtime
+      # - ./Assets:/app/Assets:ro
+    
+    # Allow docker to access host display
+    network_mode: "host"
+    
+    # Give container access to GPU and display
+    ipc: host
+    
+    # Uncomment for privileged mode if display doesn't work
+    # privileged: true
+    
+    # Restart policy
+    restart: unless-stopped
+    
+    # Resource limits (optional)
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 1G
+        reservations:
+          cpus: '1'
+          memory: 512M
+
+
+# Docker-compose configurations:
+#
+# Linux:
+#   - Run: docker-compose up
+#   - X11 socket is automatically available
+#   - Audio may need PulseAudio socket volume mount
+#
+# macOS:
+#   - Run: docker-compose up
+#   - Requires Docker Desktop with VirtualizationFramework
+#   - May need X11 forwarding setup (XQuartz)
+#
+# Windows:
+#   - Run: docker-compose up
+#   - Requires Docker Desktop with WSL2 backend
+#   - X11 display must be configured (WSLg or VcXsrv)
+#
+# Troubleshooting:
+#   - If display doesn't work, check: echo $DISPLAY
+#   - For audio issues, verify PulseAudio is available
+#   - Use "docker logs educational_games" to debug
