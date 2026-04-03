@@ -61,7 +61,7 @@ Then select option **1** to download from GitHub Releases. The script will:
 - ✅ Verify everything is in place
 
 **Manual Download:**
-1. Go to [GitHub Releases](https://github.com/TODO_UPDATE_WITH_YOUR_REPO/releases)
+1. Go to [GitHub Releases](https://github.com/LosLejo/OOP-Final-Project/releases)
 2. Download the latest `assets.zip` (e.g., `assets-v1.0`)
 3. Extract to your project root directory
 4. Verify `Assets/` folder now contains: `Sounds/`, `backgrounds/`, `fonts/`, etc.

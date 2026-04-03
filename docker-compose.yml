@@ -7,13 +7,13 @@ services:
       dockerfile: Dockerfile
     image: educational-games:latest
     container_name: educational_games
-    
+
     # Display configuration for GUI
     environment:
       - DISPLAY=${DISPLAY:-:0}
       - SDL_VIDEODRIVER=x11
       - SDL_AUDIODRIVER=pulse
-    
+
     # Volume mounts for X11 and audio
     volumes:
       # X11 display socket (Linux/macOS)
@@ -24,19 +24,19 @@ services:
       - /run/user/1000/pulse:/run/user/1000/pulse:ro
       # Or mount Assets locally if you want to provide them at runtime
       # - ./Assets:/app/Assets:ro
-    
-    # Allow docker to access host display
+
+      # Allow docker to access host display
     network_mode: "host"
-    
+
     # Give container access to GPU and display
     ipc: host
-    
+
     # Uncomment for privileged mode if display doesn't work
     # privileged: true
-    
+
     # Restart policy
     restart: unless-stopped
-    
+
     # Resource limits (optional)
     deploy:
       resources:
@@ -46,7 +46,6 @@ services:
         reservations:
           cpus: '1'
           memory: 512M
-
 
 # Docker-compose configurations:
 #

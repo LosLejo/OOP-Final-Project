@@ -64,9 +64,9 @@ REQUIRED_ASSETS = {
     "Assets/slider": [],
 }
 
-# Configuration - UPDATE WITH YOUR GITHUB RELEASES URL
+# Configuration - GitHub Releases URL
 # See SETUP_GITHUB_RELEASES.md for how to create releases and get this URL
-DOWNLOAD_URL = "https://github.com/YOUR_USERNAME/Final-Project-OOP/releases/download/assets-v1.0/assets.zip"
+DOWNLOAD_URL = "https://github.com/LosLejo/OOP-Final-Project/releases/download/assets-v1.0/assets.zip"
 GDRIVE_ID = "YOUR_GOOGLE_DRIVE_FILE_ID"  # Alternative: Google Drive share (optional)
 
 

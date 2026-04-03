@@ -32,7 +32,7 @@ zip -r assets.zip Assets/Sounds Assets/backgrounds Assets/boxes Assets/buttons A
 
 ### Via GitHub Web UI (Easiest):
 
-1. Go to your repository: `https://github.com/YOUR_USERNAME/Final-Project-OOP`
+1. Go to your repository: `https://github.com/LosLejo/OOP-Final-Project`
 2. Click **Releases** (on the right side)
 3. Click **Create a new release**
 4. Fill in the form:
@@ -67,12 +67,12 @@ gh release create assets-v1.0 assets.zip --title "Game Assets Package v1.0" --no
 
 After creating the release:
 
-1. Go to **Releases** page
+1. Go to **Releases** page: `https://github.com/LosLejo/OOP-Final-Project/releases`
 2. Find your release (e.g., `assets-v1.0`)
 3. Right-click on `assets.zip` → **Copy link address**
 4. URL will look like: 
    ```
-   https://github.com/YOUR_USERNAME/Final-Project-OOP/releases/download/assets-v1.0/assets.zip
+   https://github.com/LosLejo/OOP-Final-Project/releases/download/assets-v1.0/assets.zip
    ```
 
 ## Step 4: Update Your Project
@@ -80,7 +80,7 @@ After creating the release:
 Open `scripts/download_assets.py` and update:
 
 ```python
-DOWNLOAD_URL = "https://github.com/YOUR_USERNAME/Final-Project-OOP/releases/download/assets-v1.0/assets.zip"
+DOWNLOAD_URL = "https://github.com/LosLejo/OOP-Final-Project/releases/download/assets-v1.0/assets.zip"
 ```
 
 ## Step 5: Commit and Push
@@ -165,8 +165,8 @@ GitHub Releases are:
 Now users can do:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Final-Project-OOP.git
-cd Final-Project-OOP
+git clone https://github.com/LosLejo/OOP-Final-Project.git
+cd OOP-Final-Project
 python -m venv venv
 venv\Scripts\activate  # or: source venv/bin/activate
 pip install -r requirements.txt

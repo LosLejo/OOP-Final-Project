@@ -101,7 +101,7 @@ Select option **1** to download from GitHub Releases. The script will automatica
 
 ### Option 2: GitHub Releases (Manual)
 
-1. Go to [GitHub Releases](https://github.com/YOUR_USERNAME/Final-Project-OOP/releases)
+1. Go to [GitHub Releases](https://github.com/LosLejo/OOP-Final-Project/releases)
 2. Download the latest `assets.zip` (e.g., `assets-v1.0`)
 3. Extract to your project root directory
 4. Verify `Assets/` folder contains the required subdirectories (see structure above)
